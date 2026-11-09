@@ -1,48 +1,61 @@
 <!-- wp:template-part {"slug":"header","area":"header","tagName":"header"} /-->
 
-<!-- wp:group {"tagName":"main","align":"full"} -->
-<main class="wp-block-group alignfull">
-	<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|50"},"margin":{"bottom":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} -->
-	<div class="wp-block-group"
-		style="margin-bottom:var(--wp--preset--spacing--40);padding-top:var(--wp--preset--spacing--50)">
-		<!-- wp:post-featured-image {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|40"}}}} /-->
+<!-- wp:group {"tagName":"main","className":"editorial-single-wrapper","layout":{"type":"constrained"}} -->
+<main class="wp-block-group editorial-single-wrapper">
+	<div class="editorial-single-container">
+		<!-- BREADCRUMB -->
+		<nav class="editorial-single-breadcrumb">
+			<a href="http://localhost/literasi/">Beranda</a> &rsaquo; 
+			<a href="http://localhost/literasi/?page_id=86">Artikel Kajian</a> &rsaquo; 
+			<span>Kajian Etika</span>
+		</nav>
 
-		<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|10","padding":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-		<div class="wp-block-group" style="padding-top:0;padding-bottom:0">
-			<!-- wp:post-title {"level":1,"fontSize":"x-large"} /-->
-
-			<!-- wp:template-part {"slug":"post-meta"} /-->
-		</div>
-		<!-- /wp:group -->
-	</div>
-	<!-- /wp:group -->
-
-	<!-- wp:post-content {"lock":{"move":false,"remove":true},"align":"full","layout":{"type":"constrained"}} /-->
-
-	<!-- wp:group {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"},"padding":{"bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
-	<div class="wp-block-group"
-		style="margin-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--50)">
-		<!-- wp:post-terms {"term":"post_tag","separator":"  ","className":"is-style-pill"} /-->
-
-		<!-- wp:group {"layout":{"type":"constrained"}} -->
-		<div class="wp-block-group">
-			<!-- wp:spacer {"height":"var:preset|spacing|40"} -->
-			<div style="height:var(--wp--preset--spacing--40)" aria-hidden="true" class="wp-block-spacer">
+		<!-- ARTICLE HEADER -->
+		<header class="editorial-single-header">
+			<!-- wp:post-title {"level":1,"className":"editorial-single-title"} /-->
+			
+			<div class="editorial-single-meta">
+				<img src="http://localhost/literasi/wp-content/uploads/2026/11/Nabil.jpeg" alt="Muhammad Nabil Al Ma'ruf" class="editorial-single-author-avatar" />
+				<div class="editorial-single-meta-details">
+					<div class="editorial-single-author-name">Muhammad Nabil Al Ma'ruf</div>
+					<div class="editorial-single-date-read">
+						<span>Mahasiswa Sistem Informasi UINSA Surabaya</span> &bull; 
+						<span>Kajian Literasi Digital</span>
+					</div>
+				</div>
 			</div>
-			<!-- /wp:spacer -->
+		</header>
 
-			<!-- wp:separator {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|40"}}},"backgroundColor":"contrast-3","className":"is-style-wide"} -->
-			<hr class="wp-block-separator has-text-color has-contrast-3-color has-alpha-channel-opacity has-contrast-3-background-color has-background is-style-wide" style="margin-bottom:var(--wp--preset--spacing--40)"/>
-			<!-- /wp:separator -->
-
-			<!-- wp:pattern {"slug":"twentytwentyfour/hidden-comments"} /-->
-
-			<!-- wp:pattern {"slug":"twentytwentyfour/hidden-post-navigation"} /-->
-
+		<!-- ARTICLE BODY (Contains high-res image and original Unsplash attribution caption) -->
+		<div class="editorial-single-content">
+			<!-- wp:post-content {"lock":{"move":false,"remove":true}} /-->
 		</div>
-		<!-- /wp:group -->
+
+		<!-- ACADEMIC INTEGRITY & COPYRIGHT CALLOUT BOX -->
+		<div class="editorial-copyright-callout">
+			<div class="editorial-copyright-icon">📜</div>
+			<div class="editorial-copyright-text">
+				<strong>Integritas Akademik &amp; Hak Cipta Gambar:</strong> Seluruh ilustrasi dan materi visual pada artikel ini digunakan secara sah untuk tujuan pendidikan dan literasi digital, dengan lisensi bebas atribusi dari <em>Unsplash</em> sesuai keterangan pada masing-masing gambar.
+			</div>
+		</div>
+
+		<!-- AUTHOR BIO BOX -->
+		<div class="editorial-single-author-box">
+			<img src="http://localhost/literasi/wp-content/uploads/2026/11/Nabil.jpeg" alt="Muhammad Nabil Al Ma'ruf" class="editorial-single-author-card-avatar" />
+			<div class="editorial-single-author-card-bio">
+				<h4 class="editorial-single-author-card-name">Tentang Penulis: Muhammad Nabil Al Ma'ruf</h4>
+				<p>
+					Mahasiswa Program Studi Sistem Informasi di Fakultas Sains dan Teknologi, Universitas Islam Negeri Sunan Ampel (UINSA) Surabaya. Menaruh minat mendalam pada pengembangan sistem perangkat lunak, tata kelola data digital, serta advokasi etika bermedia sosial di kalangan generasi muda Indonesia.
+				</p>
+			</div>
+		</div>
+
+		<!-- POST NAVIGATION -->
+		<div class="editorial-single-nav">
+			<a href="http://localhost/literasi/?page_id=86" class="editorial-pill-btn">&larr; Kembali ke Katalog Artikel</a>
+			<a href="http://localhost/literasi/?page_id=120" class="editorial-pill-btn">Beri Tanggapan &rarr;</a>
+		</div>
 	</div>
-	<!-- /wp:group -->
 </main>
 <!-- /wp:group -->
 

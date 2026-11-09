@@ -1,9 +1,48 @@
 <!-- wp:template-part {"slug":"header","area":"header","tagName":"header"} /-->
 
-<!-- wp:group {"tagName":"main","style":{"spacing":{"blockGap":"0","margin":{"top":"0"}}},"layout":{"type":"default"}} -->
-<main class="wp-block-group" style="margin-top:0">
-	<!-- wp:pattern {"slug":"twentytwentyfour/page-home-business"} /-->
+<main class="wp-block-group editorial-catalog-main" style="margin-top:0">
+<!-- wp:html -->
+<div class="editorial-page-header">
+	<span class="editorial-section-tag">KATALOG ARTIKEL &amp; KAJIAN AKADEMIS</span>
+	<h1 class="editorial-page-title">Koleksi Ulasan Literasi Digital</h1>
+	<p class="editorial-page-subtitle">Menyajikan seluruh kajian kritis, telaah kebijakan publik, dan panduan etika bermedia sosial mahasiswa di era demokrasi digital.</p>
+</div>
+<!-- /wp:html -->
+
+<div class="editorial-catalog-container">
+<!-- wp:query {"queryId":10,"query":{"perPage":9,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true}} -->
+<div class="wp-block-query alignwide">
+	<!-- wp:post-template -->
+		<!-- wp:group {"tagName":"article","className":"editorial-dynamic-card"} -->
+		<article class="wp-block-group editorial-dynamic-card">
+			<div class="editorial-dynamic-thumb-wrap">
+				<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9"} /-->
+			</div>
+			<div class="editorial-dynamic-card-body">
+				<div class="editorial-dynamic-meta">
+					<!-- wp:post-date {"format":"j F Y"} /--> &bull; <!-- wp:post-author-name /-->
+				</div>
+				<!-- wp:post-title {"isLink":true,"level":2,"className":"editorial-dynamic-title"} /-->
+				<!-- wp:post-excerpt {"moreText":"Baca Artikel Lengkap →","showMoreOnNewLine":true} /-->
+			</div>
+		</article>
+		<!-- /wp:group -->
+	<!-- /wp:post-template -->
+
+	<!-- wp:query-pagination {"paginationArrow":"arrow","layout":{"type":"flex","justifyContent":"center"}} -->
+		<!-- wp:query-pagination-previous {"label":"← Sebelumnya"} /-->
+		<!-- wp:query-pagination-numbers /-->
+		<!-- wp:query-pagination-next {"label":"Selanjutnya →"} /-->
+	<!-- /wp:query-pagination -->
+
+	<!-- wp:query-no-results -->
+		<!-- wp:paragraph {"align":"center"} -->
+		<p class="has-text-align-center" style="color:#64748b; padding:40px 0;">Belum ada artikel tambahan yang diterbitkan.</p>
+		<!-- /wp:paragraph -->
+	<!-- /wp:query-no-results -->
+</div>
+<!-- /wp:query -->
+</div>
 </main>
-<!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"footer","area":"footer","tagName":"footer"} /-->

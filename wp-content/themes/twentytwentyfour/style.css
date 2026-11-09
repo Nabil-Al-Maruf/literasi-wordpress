@@ -3,13 +3,1977 @@ Theme Name: Twenty Twenty-Four
 Theme URI: https://wordpress.org/themes/twentytwentyfour/
 Author: the WordPress team
 Author URI: https://wordpress.org
-Description: Twenty Twenty-Four is designed to be flexible, versatile and applicable to any website. Its collection of templates and patterns tailor to different needs, such as presenting a business, blogging and writing or showcasing work. A multitude of possibilities open up with just a few adjustments to color and typography. Twenty Twenty-Four comes with style variations and full page designs to help speed up the site building process, is fully compatible with the site editor, and takes advantage of new design tools introduced in WordPress 6.4.
-Requires at least: 6.4
-Tested up to: 7.1
-Requires PHP: 7.0
+Description: Twenty Twenty-Four theme customized with Modern High-End Editorial Aesthetic for Literasi Digital.
 Version: 1.6
 License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: twentytwentyfour
-Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready, wide-blocks, block-styles, style-variations, accessibility-ready, blog, portfolio, news
 */
+
+/* ==========================================================================
+   1. GLOBAL TYPOGRAPHY & SMOOTH BASE
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+html {
+	scroll-behavior: smooth;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	background-color: #ffffff;
+	color: #1f2937;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+
+/* Full-bleed container resets for WordPress FSE template wrappers */
+body.home .wp-site-blocks,
+body.home main.wp-block-group,
+body.home .entry-content.wp-block-post-content {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	max-width: 100% !important;
+}
+
+/* Remove default Twenty Twenty-Four block spacing overrides */
+.editorial-hero,
+.editorial-newsletter-section {
+	width: 100% !important;
+	max-width: 100% !important;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	left: 0 !important;
+	right: 0 !important;
+	box-sizing: border-box !important;
+}
+
+/* ==========================================================================
+   2. NAVBAR & HEADER (Trouvaille / Minimal Editorial Style)
+   ========================================================================== */
+.editorial-navbar-wrapper {
+	width: 100% !important;
+	background-color: #ffffff;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+	padding: 28px 20px 20px !important;
+	box-sizing: border-box;
+	position: relative;
+	z-index: 50;
+}
+
+.editorial-navbar-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.editorial-brand {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	text-decoration: none;
+	margin-bottom: 18px;
+	transition: opacity 0.25s ease;
+}
+
+.editorial-brand:hover {
+	opacity: 0.82;
+}
+
+.editorial-brand-title {
+	font-family: 'Playfair Display', Georgia, serif;
+	font-size: 2.3rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	color: #111827;
+	line-height: 1.1;
+}
+
+.editorial-brand-subtitle {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+	color: #64748b;
+	margin-top: 6px;
+}
+
+.editorial-nav-links {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 34px;
+	flex-wrap: wrap;
+}
+
+.editorial-nav-item {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 0.88rem;
+	font-weight: 500;
+	letter-spacing: 0.06em;
+	color: #4b5563;
+	text-decoration: none;
+	position: relative;
+	padding: 4px 0;
+	transition: color 0.25s ease;
+}
+
+.editorial-nav-item::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 1.5px;
+	background-color: #111827;
+	transition: all 0.25s ease;
+	transform: translateX(-50%);
+}
+
+.editorial-nav-item:hover,
+.editorial-nav-item.is-active {
+	color: #111827;
+	font-weight: 600;
+}
+
+.editorial-nav-item:hover::after,
+.editorial-nav-item.is-active::after {
+	width: 100%;
+}
+
+/* ==========================================================================
+   3. HERO BANNER WITH TORN PAPER / MIST DIVIDER
+   ========================================================================== */
+.editorial-hero {
+	position: relative;
+	height: 680px;
+	min-height: 620px;
+	max-height: 720px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 80px 24px 130px;
+	box-sizing: border-box;
+	overflow: hidden;
+	background-color: #0f172a;
+}
+
+.editorial-hero-bg {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center 30%;
+	z-index: 1;
+	transform: scale(1.02);
+	filter: brightness(0.7) contrast(1.1);
+}
+
+.editorial-hero-overlay {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		180deg,
+		rgba(15, 23, 42, 0.45) 0%,
+		rgba(15, 23, 42, 0.6) 45%,
+		rgba(15, 23, 42, 0.78) 100%
+	);
+	z-index: 2;
+}
+
+.editorial-hero-content {
+	position: relative;
+	z-index: 3;
+	max-width: 880px;
+	margin: 0 auto;
+	color: #ffffff;
+}
+
+.editorial-hero-title {
+	font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+	font-size: clamp(2.6rem, 5.8vw, 4.8rem);
+	font-weight: 700;
+	letter-spacing: 0.14em;
+	color: #ffffff;
+	text-transform: uppercase;
+	line-height: 1.1;
+	margin: 0 0 18px 0;
+	text-shadow: 0 4px 28px rgba(0, 0, 0, 0.65);
+}
+
+.editorial-hero-subtitle {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: clamp(1rem, 2vw, 1.25rem);
+	font-weight: 400;
+	color: rgba(255, 255, 255, 0.92);
+	letter-spacing: 0.05em;
+	line-height: 1.7;
+	max-width: 680px;
+	margin: 0 auto 36px;
+	text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.editorial-hero-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 13px 44px;
+	border-radius: 9999px;
+	background: rgba(255, 255, 255, 0.14);
+	border: 1.5px solid rgba(255, 255, 255, 0.75);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	color: #ffffff !important;
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 0.82rem;
+	font-weight: 700;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.editorial-hero-btn:hover {
+	background: #ffffff;
+	color: #0f172a !important;
+	transform: translateY(-3px);
+	box-shadow: 0 12px 35px rgba(255, 255, 255, 0.38);
+}
+
+/* Signature torn paper organic divider at bottom of hero */
+.editorial-hero-divider {
+	position: absolute;
+	bottom: -1px;
+	left: 0;
+	width: 100%;
+	height: 85px;
+	z-index: 4;
+	pointer-events: none;
+	line-height: 0;
+}
+
+.editorial-hero-divider svg {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+/* ==========================================================================
+   4. INTRO & 3 ICONS PILLAR SECTION
+   ========================================================================== */
+.editorial-pillars-section {
+	max-width: 980px;
+	margin: 0 auto;
+	padding: 80px 24px 65px;
+	text-align: center;
+	background-color: #ffffff;
+}
+
+.editorial-section-tag {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 0.72rem;
+	font-weight: 800;
+	letter-spacing: 0.24em;
+	text-transform: uppercase;
+	color: #0284c7;
+	margin-bottom: 12px;
+	display: inline-block;
+}
+
+.editorial-pillars-title {
+	font-family: 'Playfair Display', Georgia, serif;
+	font-size: clamp(2rem, 3.6vw, 2.75rem);
+	font-weight: 700;
+	color: #111827;
+	line-height: 1.25;
+	margin: 0 0 20px 0;
+}
+
+.editorial-pillars-desc {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 1.05rem;
+	line-height: 1.85;
+	color: #4b5563;
+	max-width: 800px;
+	margin: 0 auto 55px;
+	font-weight: 400;
+}
+
+.editorial-pillars-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 36px;
+	margin-top: 20px;
+}
+
+.editorial-pillar-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 24px 16px;
+	border-radius: 16px;
+	transition: transform 0.3s ease;
+}
+
+.editorial-pillar-card:hover {
+	transform: translateY(-4px);
+}
+
+.editorial-pillar-icon-box {
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	border: 1.5px solid #111827;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 18px;
+	color: #111827;
+	transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+	background-color: #ffffff;
+}
+
+.editorial-pillar-card:hover .editorial-pillar-icon-box {
+	background-color: #111827;
+	color: #ffffff;
+	box-shadow: 0 8px 24px rgba(17, 24, 39, 0.15);
+}
+
+.editorial-pillar-name {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 0.82rem;
+	font-weight: 800;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: #111827;
+	margin: 0 0 10px 0;
+}
+
+.editorial-pillar-text {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 0.88rem;
+	line-height: 1.65;
+	color: #64748b;
+	margin: 0;
+}
+
+/* ==========================================================================
+   5. ALTERNATING EDITORIAL ARTICLE SPOTLIGHTS (With Feathered Photo Masks)
+   ========================================================================== */
+.editorial-articles-section {
+	max-width: 1140px;
+	margin: 0 auto;
+	padding: 40px 24px 75px;
+}
+
+.editorial-article-card {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 60px;
+	margin-bottom: 95px;
+}
+
+.editorial-article-card.is-reversed {
+	flex-direction: row-reverse;
+}
+
+.editorial-article-text {
+	flex: 1 1 500px;
+	max-width: 540px;
+}
+
+.editorial-article-category {
+	display: inline-block;
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: #0f766e;
+	background-color: #f0fdfa;
+	padding: 5px 14px;
+	border-radius: 9999px;
+	margin-bottom: 14px;
+	border: 1px solid #ccfbf1;
+}
+
+.editorial-article-title {
+	font-family: 'Playfair Display', Georgia, serif;
+	font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+	font-weight: 700;
+	line-height: 1.3;
+	color: #111827;
+	margin: 0 0 16px 0;
+}
+
+.editorial-article-title a {
+	color: inherit;
+	text-decoration: none;
+	transition: color 0.25s ease;
+}
+
+.editorial-article-title a:hover {
+	color: #0284c7;
+}
+
+.editorial-article-excerpt {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 1rem;
+	line-height: 1.8;
+	color: #4b5563;
+	margin: 0 0 26px 0;
+}
+
+.editorial-pill-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	padding: 11px 32px;
+	border-radius: 9999px;
+	border: 1.5px solid #111827;
+	background-color: transparent;
+	color: #111827 !important;
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 0.78rem;
+	font-weight: 700;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-pill-btn:hover {
+	background-color: #111827;
+	color: #ffffff !important;
+	transform: translateY(-2px);
+	box-shadow: 0 8px 24px rgba(17, 24, 39, 0.15);
+}
+
+.editorial-article-media {
+	flex: 1 1 480px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+/* Signature feathered / soft cloud vignette photo mask */
+.editorial-feather-img {
+	width: 100%;
+	max-width: 480px;
+	height: 340px;
+	object-fit: cover;
+	border-radius: 12px;
+	-webkit-mask-image: radial-gradient(ellipse at center, #000000 50%, rgba(0, 0, 0, 0.6) 70%, transparent 92%);
+	mask-image: radial-gradient(ellipse at center, #000000 50%, rgba(0, 0, 0, 0.6) 70%, transparent 92%);
+	transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+	filter: contrast(104%);
+}
+
+.editorial-article-card:hover .editorial-feather-img {
+	transform: scale(1.03);
+}
+
+/* ==========================================================================
+   6. MISSION & AUTHOR QUOTE SECTION
+   ========================================================================== */
+.editorial-mission-section {
+	max-width: 860px;
+	margin: 0 auto;
+	padding: 50px 24px 90px;
+	text-align: center;
+	background-color: #ffffff;
+}
+
+.editorial-mission-title {
+	font-family: 'Playfair Display', Georgia, serif;
+	font-size: clamp(2rem, 3.4vw, 2.75rem);
+	font-weight: 700;
+	color: #111827;
+	margin: 0 0 24px 0;
+}
+
+.editorial-mission-quote {
+	font-family: 'Playfair Display', Georgia, serif;
+	font-style: italic;
+	font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+	line-height: 1.7;
+	color: #1f2937;
+	max-width: 760px;
+	margin: 0 auto 36px;
+	position: relative;
+	padding: 0 20px;
+}
+
+.editorial-author-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.editorial-author-avatar {
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 3px solid #ffffff;
+	box-shadow: 0 8px 26px rgba(0, 0, 0, 0.14);
+	margin-bottom: 14px;
+	transition: transform 0.3s ease;
+}
+
+.editorial-author-avatar:hover {
+	transform: scale(1.05);
+}
+
+.editorial-author-name {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 1.15rem;
+	font-weight: 700;
+	color: #111827;
+	margin: 0 0 4px 0;
+}
+
+.editorial-author-bio {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 0.88rem;
+	color: #64748b;
+	margin: 0;
+}
+
+/* ==========================================================================
+   7. BOTTOM WAVE & ENGAGEMENT / NEWSLETTER SECTION
+   ========================================================================== */
+.editorial-newsletter-section {
+	position: relative;
+	min-height: 480px;
+	height: 520px;
+	max-height: 540px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 100px 24px 70px;
+	box-sizing: border-box;
+	overflow: hidden;
+	background-color: #0b1329;
+}
+
+.editorial-newsletter-bg {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center bottom;
+	z-index: 1;
+	filter: brightness(0.65) contrast(1.1);
+}
+
+.editorial-newsletter-overlay {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		180deg,
+		rgba(11, 19, 41, 0.85) 0%,
+		rgba(11, 19, 41, 0.7) 50%,
+		rgba(11, 19, 41, 0.95) 100%
+	);
+	z-index: 2;
+}
+
+.editorial-newsletter-top-divider {
+	position: absolute;
+	top: -1px;
+	left: 0;
+	width: 100%;
+	height: 80px;
+	z-index: 4;
+	pointer-events: none;
+	line-height: 0;
+}
+
+.editorial-newsletter-top-divider svg {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+.editorial-newsletter-content {
+	position: relative;
+	z-index: 3;
+	max-width: 640px;
+	margin: 0 auto;
+	color: #ffffff;
+}
+
+.editorial-newsletter-title {
+	font-family: 'Playfair Display', Georgia, serif;
+	font-size: clamp(2rem, 3.6vw, 2.75rem);
+	font-weight: 700;
+	color: #ffffff;
+	margin: 0 0 14px 0;
+	text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
+}
+
+.editorial-newsletter-desc {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 1rem;
+	line-height: 1.7;
+	color: rgba(255, 255, 255, 0.85);
+	margin: 0 auto 34px;
+	max-width: 540px;
+}
+
+.editorial-newsletter-form {
+	display: flex;
+	max-width: 480px;
+	margin: 0 auto 40px;
+	background: rgba(255, 255, 255, 0.12);
+	border: 1.5px solid rgba(255, 255, 255, 0.4);
+	border-radius: 9999px;
+	backdrop-filter: blur(14px);
+	-webkit-backdrop-filter: blur(14px);
+	padding: 5px 6px 5px 22px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.editorial-newsletter-input {
+	flex: 1;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #ffffff;
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 0.92rem;
+}
+
+.editorial-newsletter-input::placeholder {
+	color: rgba(255, 255, 255, 0.65);
+}
+
+.editorial-newsletter-submit {
+	background-color: #ffffff;
+	color: #0f172a;
+	border: none;
+	border-radius: 9999px;
+	padding: 11px 24px;
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 0.8rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.25s ease;
+}
+
+.editorial-newsletter-submit:hover {
+	background-color: #38bdf8;
+	color: #ffffff;
+	box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+}
+
+.editorial-social-box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.editorial-social-title {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 0.78rem;
+	font-weight: 700;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.75);
+	margin-bottom: 14px;
+}
+
+.editorial-social-links {
+	display: flex;
+	gap: 18px;
+}
+
+.editorial-social-link {
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.25);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #ffffff;
+	text-decoration: none;
+	transition: all 0.25s ease;
+}
+
+.editorial-social-link:hover {
+	background: #ffffff;
+	color: #0f172a;
+	transform: translateY(-2px);
+}
+
+.editorial-social-link svg {
+	width: 18px;
+	height: 18px;
+}
+
+/* ==========================================================================
+   8. CLEAN EDITORIAL FOOTER
+   ========================================================================== */
+.editorial-footer-wrapper {
+	width: 100% !important;
+	background-color: #080d1a;
+	padding: 55px 24px 45px !important;
+	color: #94a3b8;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+.editorial-footer-container {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.editorial-footer-brand {
+	font-family: 'Playfair Display', Georgia, serif;
+	font-size: 1.55rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	color: #ffffff;
+	margin-bottom: 12px;
+}
+
+.editorial-footer-desc {
+	font-size: 0.92rem;
+	line-height: 1.7;
+	color: #64748b;
+	max-width: 600px;
+	margin: 0 auto 26px;
+}
+
+.editorial-footer-links {
+	display: flex;
+	justify-content: center;
+	gap: 28px;
+	flex-wrap: wrap;
+	margin-bottom: 32px;
+}
+
+.editorial-footer-links a {
+	color: #94a3b8;
+	text-decoration: none;
+	font-size: 0.88rem;
+	font-weight: 500;
+	transition: color 0.2s ease;
+}
+
+.editorial-footer-links a:hover {
+	color: #ffffff;
+}
+
+.editorial-footer-divider {
+	width: 64px;
+	height: 1px;
+	background-color: rgba(255, 255, 255, 0.12);
+	margin: 0 auto 26px;
+}
+
+.editorial-footer-copy {
+	font-size: 0.84rem;
+	color: #64748b;
+	line-height: 1.6;
+}
+
+.editorial-footer-copy strong {
+	color: #cbd5e1;
+}
+
+/* ==========================================================================
+   9. RESPONSIVE DESIGN ADJUSTMENTS
+   ========================================================================== */
+@media (max-width: 860px) {
+	.editorial-hero {
+		min-height: 75vh;
+		padding: 70px 20px 120px;
+	}
+
+	.editorial-pillars-grid {
+		grid-template-columns: 1fr;
+		gap: 24px;
+	}
+
+	.editorial-article-card,
+	.editorial-article-card.is-reversed {
+		flex-direction: column-reverse;
+		gap: 36px;
+		margin-bottom: 70px;
+		text-align: center;
+	}
+
+	.editorial-article-text {
+		max-width: 100%;
+	}
+
+	.editorial-feather-img {
+		height: 280px;
+		max-width: 100%;
+	}
+
+	.editorial-nav-links {
+		gap: 16px;
+	}
+}
+
+
+/* ==========================================================================
+   10. COMMON EDITORIAL PAGE HEADERS (Catalog, About, Contact)
+   ========================================================================== */
+.editorial-page-header {
+	background-color: #fafbfc;
+	border-bottom: 1px solid #eef0f3;
+	padding: 70px 24px 60px;
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.editorial-page-title {
+	font-family: 'Playfair Display', Georgia, serif;
+	font-size: clamp(2.2rem, 4vw, 3.2rem);
+	font-weight: 700;
+	color: #111827;
+	line-height: 1.2;
+	margin: 0 0 16px 0;
+}
+
+.editorial-page-subtitle {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 1.05rem;
+	line-height: 1.7;
+	color: #4b5563;
+	max-width: 680px;
+	margin: 0 auto;
+}
+
+/* ==========================================================================
+   11. IMAGE CAPTIONS & COPYRIGHT ATTRIBUTION
+   ========================================================================== */
+.editorial-img-caption {
+	display: block;
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 0.75rem;
+	color: #6b7280;
+	margin-top: 8px;
+	line-height: 1.5;
+	letter-spacing: 0.02em;
+}
+
+.editorial-img-caption a {
+	color: #4b5563;
+	text-decoration: underline;
+	transition: color 0.2s ease;
+}
+
+.editorial-img-caption a:hover {
+	color: #0284c7;
+}
+
+.editorial-hero-credit {
+	position: absolute;
+	bottom: 95px;
+	right: 28px;
+	z-index: 5;
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 0.72rem;
+	color: rgba(255, 255, 255, 0.75);
+	background: rgba(0, 0, 0, 0.45);
+	backdrop-filter: blur(6px);
+	padding: 4px 12px;
+	border-radius: 9999px;
+	letter-spacing: 0.04em;
+}
+
+.editorial-hero-credit a {
+	color: #ffffff;
+	text-decoration: underline;
+}
+
+.editorial-feather-caption {
+	display: block;
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 0.75rem;
+	color: #6b7280;
+	margin-top: 10px;
+	text-align: center;
+	letter-spacing: 0.02em;
+}
+
+.editorial-feather-caption a {
+	color: #4b5563;
+	text-decoration: underline;
+	transition: color 0.2s ease;
+}
+
+.editorial-feather-caption a:hover {
+	color: #0284c7;
+}
+
+.editorial-author-credit {
+	display: block;
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 0.72rem;
+	color: #9ca3af;
+	margin-top: 4px;
+	margin-bottom: 12px;
+	letter-spacing: 0.04em;
+}
+
+.editorial-newsletter-credit {
+	position: absolute;
+	bottom: 18px;
+	right: 24px;
+	z-index: 5;
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 0.72rem;
+	color: rgba(255, 255, 255, 0.6);
+	background: rgba(0, 0, 0, 0.35);
+	padding: 3px 10px;
+	border-radius: 9999px;
+}
+
+.editorial-newsletter-credit a {
+	color: rgba(255, 255, 255, 0.85);
+	text-decoration: underline;
+}
+
+/* ==========================================================================
+   12. ARTICLE CATALOG / BLOG PAGE STYLING
+   ========================================================================== */
+.editorial-catalog-container {
+	max-width: 1140px;
+	margin: 0 auto 90px;
+	padding: 0 24px;
+}
+
+.editorial-catalog-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 36px;
+}
+
+.editorial-catalog-card {
+	background: #ffffff;
+	border: 1px solid #eef0f3;
+	border-radius: 16px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.editorial-catalog-card:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 16px 36px rgba(17, 24, 39, 0.08);
+}
+
+.editorial-catalog-thumb-box {
+	position: relative;
+	width: 100%;
+	height: 230px;
+	overflow: hidden;
+	background-color: #0f172a;
+}
+
+.editorial-catalog-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.5s ease;
+}
+
+.editorial-catalog-card:hover .editorial-catalog-img {
+	transform: scale(1.05);
+}
+
+.editorial-catalog-badge {
+	position: absolute;
+	top: 14px;
+	left: 14px;
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 0.7rem;
+	font-weight: 700;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: #0f766e;
+	background: #ffffff;
+	padding: 4px 12px;
+	border-radius: 9999px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.editorial-catalog-body {
+	padding: 24px 22px 28px;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+.editorial-catalog-meta {
+	font-size: 0.76rem;
+	color: #6b7280;
+	margin-bottom: 10px;
+	font-weight: 500;
+}
+
+.editorial-catalog-title {
+	font-family: 'Playfair Display', Georgia, serif;
+	font-size: 1.35rem;
+	font-weight: 700;
+	line-height: 1.35;
+	color: #111827;
+	margin: 0 0 12px 0;
+}
+
+.editorial-catalog-title a {
+	color: inherit;
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+.editorial-catalog-title a:hover {
+	color: #0284c7;
+}
+
+.editorial-catalog-excerpt {
+	font-size: 0.92rem;
+	line-height: 1.7;
+	color: #4b5563;
+	margin: 0 0 16px 0;
+	flex: 1;
+}
+
+.editorial-catalog-cta {
+	margin-top: 16px;
+	padding-top: 16px;
+	border-top: 1px solid #f3f4f6;
+}
+
+/* ==========================================================================
+   13. ABOUT PAGE (TENTANG PENULIS) STYLING
+   ========================================================================== */
+.editorial-about-container {
+	max-width: 960px;
+	margin: 0 auto 90px;
+	padding: 0 24px;
+}
+
+.editorial-about-profile-card {
+	display: flex;
+	align-items: center;
+	gap: 40px;
+	background: #ffffff;
+	border: 1px solid #eef0f3;
+	border-radius: 20px;
+	padding: 36px 40px;
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+	margin-bottom: 50px;
+}
+
+.editorial-about-avatar-wrap {
+	flex-shrink: 0;
+	text-align: center;
+}
+
+.editorial-about-avatar {
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 4px solid #ffffff;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.editorial-about-info {
+	flex: 1;
+}
+
+.editorial-about-name {
+	font-family: 'Playfair Display', Georgia, serif;
+	font-size: 2rem;
+	font-weight: 700;
+	color: #111827;
+	margin: 0 0 6px 0;
+}
+
+.editorial-about-badge-role {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 0.82rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: #0284c7;
+	margin-bottom: 8px;
+}
+
+.editorial-about-institution {
+	font-size: 0.95rem;
+	color: #4b5563;
+	margin: 0 0 18px 0;
+}
+
+.editorial-about-tech-stack {
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+.editorial-tech-tag {
+	font-size: 0.72rem;
+	font-weight: 600;
+	color: #374151;
+	background: #f3f4f6;
+	padding: 4px 12px;
+	border-radius: 9999px;
+	border: 1px solid #e5e7eb;
+}
+
+.editorial-about-content-body {
+	background: #ffffff;
+	border: 1px solid #eef0f3;
+	border-radius: 20px;
+	padding: 44px 48px;
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+}
+
+.editorial-about-section-block {
+	margin-bottom: 36px;
+}
+
+.editorial-about-block-title {
+	font-family: 'Playfair Display', Georgia, serif;
+	font-size: 1.45rem;
+	font-weight: 700;
+	color: #111827;
+	margin: 0 0 14px 0;
+	position: relative;
+	padding-left: 18px;
+}
+
+.editorial-about-block-title::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 4px;
+	bottom: 4px;
+	width: 4px;
+	background-color: #0284c7;
+	border-radius: 2px;
+}
+
+.editorial-about-content-body p {
+	font-size: 1.05rem;
+	line-height: 1.85;
+	color: #374151;
+	margin-bottom: 16px;
+}
+
+.editorial-about-quote {
+	margin: 24px 0;
+	padding: 20px 24px;
+	background: #f8fafc;
+	border-left: 4px solid #111827;
+	font-family: 'Playfair Display', Georgia, serif;
+	font-style: italic;
+	font-size: 1.15rem;
+	color: #1f2937;
+	border-radius: 0 12px 12px 0;
+}
+
+.editorial-about-cta-bar {
+	display: flex;
+	gap: 16px;
+	margin-top: 40px;
+	padding-top: 30px;
+	border-top: 1px solid #eef0f3;
+	flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   14. CONTACT PAGE (KONTAK) STYLING & CF7
+   ========================================================================== */
+.editorial-contact-container {
+	max-width: 1040px;
+	margin: 0 auto 90px;
+	padding: 0 24px;
+}
+
+.editorial-contact-grid {
+	display: grid;
+	grid-template-columns: 1fr 1.2fr;
+	gap: 40px;
+}
+
+.editorial-privacy-box {
+	background: #f0fdf4;
+	border: 1px solid #bbf7d0;
+	border-radius: 16px;
+	padding: 24px;
+	margin-bottom: 28px;
+}
+
+.editorial-privacy-icon {
+	font-size: 1.6rem;
+	margin-bottom: 10px;
+}
+
+.editorial-privacy-title {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 0.95rem;
+	font-weight: 700;
+	color: #166534;
+	margin: 0 0 8px 0;
+}
+
+.editorial-privacy-desc {
+	font-size: 0.88rem;
+	line-height: 1.65;
+	color: #15803d;
+	margin: 0;
+}
+
+.editorial-contact-card {
+	background: #ffffff;
+	border: 1px solid #eef0f3;
+	border-radius: 16px;
+	padding: 26px;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+}
+
+.editorial-contact-card-title {
+	font-family: 'Playfair Display', Georgia, serif;
+	font-size: 1.2rem;
+	font-weight: 700;
+	color: #111827;
+	margin: 0 0 16px 0;
+}
+
+.editorial-contact-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	font-size: 0.9rem;
+	line-height: 1.8;
+	color: #4b5563;
+}
+
+.editorial-contact-list li {
+	margin-bottom: 8px;
+}
+
+.editorial-contact-list a {
+	color: #0284c7;
+	text-decoration: none;
+}
+
+.editorial-contact-form-box {
+	background: #ffffff;
+	border: 1px solid #eef0f3;
+	border-radius: 20px;
+	padding: 38px 40px;
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+}
+
+.editorial-form-heading {
+	font-family: 'Playfair Display', Georgia, serif;
+	font-size: 1.6rem;
+	font-weight: 700;
+	color: #111827;
+	margin: 0 0 6px 0;
+}
+
+.editorial-form-subheading {
+	font-size: 0.92rem;
+	color: #6b7280;
+	margin: 0 0 28px 0;
+}
+
+/* Contact Form 7 Form Controls */
+.editorial-cf7-wrapper form p {
+	margin-bottom: 20px;
+}
+
+.editorial-cf7-wrapper label {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 0.85rem;
+	font-weight: 600;
+	color: #374151;
+	display: block;
+	margin-bottom: 6px;
+}
+
+.editorial-cf7-wrapper input[type="text"],
+.editorial-cf7-wrapper input[type="email"],
+.editorial-cf7-wrapper textarea {
+	width: 100% !important;
+	box-sizing: border-box !important;
+	padding: 12px 18px !important;
+	border: 1.5px solid #d1d5db !important;
+	border-radius: 10px !important;
+	font-family: 'Plus Jakarta Sans', sans-serif !important;
+	font-size: 0.95rem !important;
+	color: #111827 !important;
+	background-color: #f9fafb !important;
+	transition: all 0.25s ease !important;
+	outline: none !important;
+}
+
+.editorial-cf7-wrapper input[type="text"]:focus,
+.editorial-cf7-wrapper input[type="email"]:focus,
+.editorial-cf7-wrapper textarea:focus {
+	border-color: #111827 !important;
+	background-color: #ffffff !important;
+	box-shadow: 0 0 0 4px rgba(17, 24, 39, 0.08) !important;
+}
+
+.editorial-cf7-wrapper input[type="submit"] {
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	padding: 12px 36px !important;
+	border-radius: 9999px !important;
+	background: #111827 !important;
+	color: #ffffff !important;
+	font-family: 'Plus Jakarta Sans', sans-serif !important;
+	font-size: 0.82rem !important;
+	font-weight: 700 !important;
+	letter-spacing: 0.16em !important;
+	text-transform: uppercase !important;
+	border: none !important;
+	cursor: pointer !important;
+	transition: all 0.3s ease !important;
+	box-shadow: 0 6px 18px rgba(17, 24, 39, 0.15) !important;
+}
+
+.editorial-cf7-wrapper input[type="submit"]:hover {
+	background: #0284c7 !important;
+	transform: translateY(-2px) !important;
+	box-shadow: 0 8px 22px rgba(2, 132, 199, 0.3) !important;
+}
+
+/* ==========================================================================
+   15. SINGLE ARTICLE EDITORIAL READING EXPERIENCE
+   ========================================================================== */
+.editorial-single-wrapper {
+	background-color: #ffffff;
+	padding: 40px 24px 90px;
+}
+
+.editorial-single-container {
+	max-width: 820px;
+	margin: 0 auto;
+}
+
+.editorial-single-breadcrumb {
+	font-size: 0.84rem;
+	color: #6b7280;
+	margin-bottom: 24px;
+}
+
+.editorial-single-breadcrumb a {
+	color: #4b5563;
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+.editorial-single-breadcrumb a:hover {
+	color: #111827;
+}
+
+.editorial-single-header {
+	margin-bottom: 32px;
+}
+
+.editorial-single-title {
+	font-family: 'Playfair Display', Georgia, serif;
+	font-size: clamp(2.2rem, 4vw, 3.2rem);
+	font-weight: 700;
+	line-height: 1.25;
+	color: #111827;
+	margin: 0 0 20px 0;
+}
+
+.editorial-single-meta {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	padding-bottom: 24px;
+	border-bottom: 1px solid #eef0f3;
+}
+
+.editorial-single-author-avatar {
+	width: 52px;
+	height: 52px;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 2px solid #e5e7eb;
+}
+
+.editorial-single-author-name {
+	font-weight: 700;
+	font-size: 0.95rem;
+	color: #111827;
+}
+
+.editorial-single-date-read {
+	font-size: 0.82rem;
+	color: #6b7280;
+}
+
+.editorial-single-featured-wrap {
+	margin-bottom: 36px;
+	border-radius: 14px;
+	overflow: hidden;
+}
+
+.editorial-single-featured-wrap img {
+	width: 100%;
+	height: auto;
+	max-height: 480px;
+	object-fit: cover;
+	border-radius: 14px;
+}
+
+.editorial-single-content p {
+	font-size: 1.12rem;
+	line-height: 1.9;
+	color: #2d3748;
+	margin-bottom: 24px;
+}
+
+.editorial-single-content figure figcaption {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 0.8rem;
+	color: #6b7280;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.editorial-single-content figure figcaption a {
+	color: #4b5563;
+	text-decoration: underline;
+}
+
+.editorial-copyright-callout {
+	display: flex;
+	gap: 16px;
+	align-items: flex-start;
+	background: #f8fafc;
+	border: 1px solid #e2e8f0;
+	border-radius: 12px;
+	padding: 18px 22px;
+	margin: 36px 0;
+	font-size: 0.86rem;
+	line-height: 1.6;
+	color: #475569;
+}
+
+.editorial-copyright-icon {
+	font-size: 1.4rem;
+	line-height: 1;
+}
+
+.editorial-single-author-box {
+	display: flex;
+	gap: 22px;
+	align-items: center;
+	background: #fdfdfd;
+	border: 1px solid #eef0f3;
+	border-radius: 16px;
+	padding: 24px 28px;
+	margin: 40px 0 30px;
+}
+
+.editorial-single-author-card-avatar {
+	width: 72px;
+	height: 72px;
+	border-radius: 50%;
+	object-fit: cover;
+	flex-shrink: 0;
+	border: 2px solid #ffffff;
+	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.editorial-single-author-card-name {
+	font-family: 'Playfair Display', Georgia, serif;
+	font-size: 1.15rem;
+	font-weight: 700;
+	color: #111827;
+	margin: 0 0 6px 0;
+}
+
+.editorial-single-author-card-bio p {
+	font-size: 0.9rem;
+	line-height: 1.65;
+	color: #4b5563;
+	margin: 0;
+}
+
+.editorial-single-nav {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 40px;
+	padding-top: 30px;
+	border-top: 1px solid #eef0f3;
+	flex-wrap: wrap;
+	gap: 16px;
+}
+
+@media (max-width: 860px) {
+	.editorial-catalog-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.editorial-about-profile-card {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.editorial-about-tech-stack {
+		justify-content: center;
+	}
+
+	.editorial-contact-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+
+/* Global Attribution & Figcaption Rule */
+figcaption, .wp-element-caption, .wp-block-image figcaption {
+	font-family: 'Plus Jakarta Sans', sans-serif !important;
+	font-size: 0.8rem !important;
+	color: #64748b !important;
+	text-align: center !important;
+	margin-top: 8px !important;
+	display: block !important;
+	line-height: 1.4 !important;
+}
+
+figcaption a, .wp-element-caption a, .wp-block-image figcaption a {
+	color: #0f172a !important;
+	font-weight: 500 !important;
+	text-decoration: underline !important;
+}
+
+
+/* ==========================================================================
+   16. DYNAMIC WORDPRESS QUERY LOOP (HALAMAN ARTIKEL / BLOG DYNAMIC GRID)
+   ========================================================================== */
+
+.editorial-catalog-main {
+	background: #ffffff;
+	min-height: 80vh;
+	padding-bottom: 80px;
+}
+
+/* Post template grid container */
+.editorial-catalog-container {
+	max-width: 1200px !important;
+	width: 100% !important;
+	margin: 0 auto 90px !important;
+	padding: 0 24px !important;
+	box-sizing: border-box !important;
+}
+
+.editorial-catalog-container .wp-block-query,
+.editorial-catalog-container .wp-block-query.alignwide {
+	max-width: 100% !important;
+	width: 100% !important;
+	margin: 0 !important;
+}
+
+.editorial-catalog-container .wp-block-post-template,
+.editorial-catalog-container ul.wp-block-post-template,
+ul.wp-block-post-template {
+	display: grid !important;
+	grid-template-columns: repeat(3, 1fr) !important;
+	gap: 32px !important;
+	max-width: 100% !important;
+	width: 100% !important;
+	list-style: none !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+@media (max-width: 960px) {
+	.editorial-catalog-container .wp-block-post-template,
+	ul.wp-block-post-template {
+		grid-template-columns: repeat(2, 1fr) !important;
+	}
+}
+
+@media (max-width: 640px) {
+	.editorial-catalog-container .wp-block-post-template,
+	ul.wp-block-post-template {
+		grid-template-columns: 1fr !important;
+	}
+}
+
+/* Post list item */
+.editorial-catalog-container .wp-block-post-template > li,
+ul.wp-block-post-template > li {
+	list-style: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	width: 100% !important;
+	max-width: 100% !important;
+}
+
+/* Dynamic Card */
+.editorial-dynamic-card {
+	background: #ffffff;
+	border: 1px solid #eef0f3;
+	border-radius: 18px;
+	overflow: hidden;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.editorial-dynamic-card:hover {
+	transform: translateY(-8px);
+	box-shadow: 0 20px 40px rgba(15, 23, 42, 0.09);
+	border-color: #cbd5e1;
+}
+
+/* Thumbnail Wrap */
+.editorial-dynamic-thumb-wrap {
+	position: relative;
+	width: 100%;
+	height: 230px;
+	overflow: hidden;
+	background: #f1f5f9;
+}
+
+.editorial-dynamic-thumb-wrap figure {
+	margin: 0 !important;
+	width: 100%;
+	height: 100%;
+}
+
+.editorial-dynamic-thumb-wrap figure a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.editorial-dynamic-thumb-wrap img {
+	width: 100% !important;
+	height: 100% !important;
+	object-fit: cover !important;
+	transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-dynamic-card:hover .editorial-dynamic-thumb-wrap img {
+	transform: scale(1.06);
+}
+
+/* Card Body */
+.editorial-dynamic-card-body {
+	padding: 24px 26px 28px;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+/* Meta */
+.editorial-dynamic-meta {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 0.78rem;
+	font-weight: 600;
+	color: #64748b;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	margin-bottom: 12px;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	flex-wrap: wrap;
+}
+
+.editorial-dynamic-meta .wp-block-post-date,
+.editorial-dynamic-meta .wp-block-post-author-name {
+	display: inline-block;
+}
+
+/* Title */
+.editorial-dynamic-title.wp-block-post-title {
+	font-family: 'Playfair Display', Georgia, serif;
+	font-size: 1.35rem;
+	font-weight: 700;
+	line-height: 1.4;
+	color: #0f172a;
+	margin: 0 0 14px 0;
+	transition: color 0.25s ease;
+}
+
+.editorial-dynamic-title.wp-block-post-title a {
+	color: #0f172a;
+	text-decoration: none;
+	transition: color 0.25s ease;
+}
+
+.editorial-dynamic-card:hover .editorial-dynamic-title.wp-block-post-title a {
+	color: #2563eb;
+}
+
+/* Excerpt */
+.editorial-dynamic-card-body .wp-block-post-excerpt {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 0.92rem;
+	line-height: 1.65;
+	color: #475569;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	justify-content: space-between;
+}
+
+.editorial-dynamic-card-body .wp-block-post-excerpt__excerpt {
+	margin: 0 0 18px 0;
+}
+
+.editorial-dynamic-card-body .wp-block-post-excerpt__more-text {
+	margin: auto 0 0 0;
+}
+
+.editorial-dynamic-card-body .wp-block-post-excerpt__more-link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 24px;
+	background: #0f172a;
+	color: #ffffff !important;
+	border-radius: 50px;
+	font-size: 0.82rem;
+	font-weight: 600;
+	text-decoration: none !important;
+	letter-spacing: 0.02em;
+	transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+	box-shadow: 0 2px 8px rgba(15, 23, 42, 0.15);
+}
+
+.editorial-dynamic-card-body .wp-block-post-excerpt__more-link:hover {
+	background: #2563eb;
+	transform: translateY(-2px);
+	box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+}
+
+/* Query Pagination */
+.wp-block-query-pagination {
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
+	gap: 10px !important;
+	margin: 50px 0 20px !important;
+	padding: 0 !important;
+}
+
+.wp-block-query-pagination a,
+.wp-block-query-pagination span {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 0.88rem;
+	font-weight: 600;
+	padding: 8px 18px;
+	border-radius: 50px;
+	border: 1px solid #e2e8f0;
+	color: #1e293b;
+	text-decoration: none;
+	transition: all 0.25s ease;
+	background: #ffffff;
+}
+
+.wp-block-query-pagination a:hover {
+	background: #0f172a;
+	color: #ffffff;
+	border-color: #0f172a;
+	transform: translateY(-2px);
+}
+
+.wp-block-query-pagination .wp-block-query-pagination-numbers .page-numbers.current,
+.wp-block-query-pagination span.current {
+	background: #0f172a;
+	color: #ffffff;
+	border-color: #0f172a;
+}
+
+/* Dark Pill Button Variant */
+.editorial-pill-btn-dark {
+	background: #0f172a !important;
+	color: #ffffff !important;
+	border: 1px solid #0f172a !important;
+	box-shadow: 0 4px 14px rgba(15, 23, 42, 0.2);
+}
+
+.editorial-pill-btn-dark:hover {
+	background: #2563eb !important;
+	border-color: #2563eb !important;
+	color: #ffffff !important;
+	transform: translateY(-3px);
+	box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35);
+}
+
+
+/* ==========================================================================
+   17. FLUID CUSTOM POINTER & CURSOR EFFECTS
+   ========================================================================== */
+
+/* Hide default OS cursor on desktop so ONLY custom fluid cursor effect is visible */
+@media (hover: hover) and (pointer: fine) {
+	*,
+	html,
+	body,
+	a,
+	button,
+	[role="button"],
+	input,
+	textarea,
+	select,
+	.editorial-pill-btn,
+	.editorial-hero-btn,
+	.editorial-newsletter-submit,
+	.editorial-pillar-card,
+	.editorial-dynamic-card,
+	.editorial-article-card {
+		cursor: none !important;
+	}
+}
+
+/* Cursor Dot */
+.editorial-cursor-dot {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 8px;
+	height: 8px;
+	background-color: #0f172a;
+	border-radius: 50%;
+	pointer-events: none;
+	z-index: 9999999;
+	opacity: 1;
+	transition: width 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+	            height 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+	            background-color 0.2s ease,
+	            opacity 0.25s ease;
+	will-change: transform;
+}
+
+/* Cursor Ring */
+.editorial-cursor-ring {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 36px;
+	height: 36px;
+	border: 1.5px solid rgba(15, 23, 42, 0.45);
+	border-radius: 50%;
+	pointer-events: none;
+	z-index: 9999998;
+	opacity: 1;
+	transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+	            height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+	            border-color 0.25s ease,
+	            background-color 0.25s ease,
+	            opacity 0.25s ease;
+	will-change: transform;
+}
+
+/* Hover state on clickable items */
+.editorial-cursor-ring.cursor-hover {
+	width: 58px;
+	height: 58px;
+	border-color: rgba(37, 99, 235, 0.7);
+	background-color: rgba(37, 99, 235, 0.1);
+	backdrop-filter: blur(1.5px);
+}
+
+.editorial-cursor-dot.cursor-hover {
+	width: 6px;
+	height: 6px;
+	background-color: #2563eb;
+}
+
+/* Active / Click State */
+.editorial-cursor-ring.cursor-active {
+	width: 26px;
+	height: 26px;
+	border-color: #0f172a;
+	background-color: rgba(15, 23, 42, 0.2);
+}
+
+.editorial-cursor-dot.cursor-active {
+	transform: translate3d(-50%, -50%, 0) scale(0.8);
+}
+
+/* Hidden when off-screen or outside window */
+.editorial-cursor-ring.cursor-hidden,
+.editorial-cursor-dot.cursor-hidden {
+	opacity: 0;
+}
+
+/* Disabled on touch devices */
+@media (hover: none) and (pointer: coarse) {
+	.editorial-cursor-dot,
+	.editorial-cursor-ring {
+		display: none !important;
+	}
+}
+
+
+/* ==========================================================================
+   18. SMOOTH SCROLL & REVEAL ANIMATIONS
+   ========================================================================== */
+
+html {
+	scroll-behavior: smooth;
+}
+
+/* Entrance Reveal Class */
+.editorial-reveal {
+	opacity: 0;
+	transform: translateY(32px);
+	transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+	            transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+	transition-delay: var(--stagger-delay, 0s);
+	will-change: opacity, transform;
+}
+
+.editorial-reveal.is-revealed {
+	opacity: 1;
+	transform: translateY(0);
+}

@@ -193,3 +193,14 @@ if ( ! function_exists( 'twentytwentyfour_pattern_categories' ) ) :
 endif;
 
 add_action( 'init', 'twentytwentyfour_pattern_categories' );
+
+/**
+ * Enqueue custom theme stylesheet, Google Fonts, and Interactive Effects for Editorial Modern aesthetic.
+ */
+function twentytwentyfour_enqueue_editorial_styles() {
+	wp_enqueue_style( 'twentytwentyfour-google-fonts', 'https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap', array(), null );
+	wp_enqueue_style( 'twentytwentyfour-editorial-style', get_stylesheet_uri(), array(), time() );
+	wp_enqueue_script( 'twentytwentyfour-editorial-effects', get_parent_theme_file_uri( 'assets/js/editorial-effects.js' ), array(), time(), true );
+}
+add_action( 'wp_enqueue_scripts', 'twentytwentyfour_enqueue_editorial_styles' );
+

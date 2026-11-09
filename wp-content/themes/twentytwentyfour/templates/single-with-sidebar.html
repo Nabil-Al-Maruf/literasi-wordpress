@@ -1,60 +1,61 @@
 <!-- wp:template-part {"slug":"header","area":"header","tagName":"header"} /-->
 
-<!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"0vh","bottom":"0vh"},"padding":{"top":"10vh","bottom":"8vh"}}},"layout":{"type":"constrained"}} -->
-<main class="wp-block-group" style="margin-top:0vh;margin-bottom:0vh;padding-top:10vh;padding-bottom:8vh">
-    <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"1rem","left":"1rem"},"padding":{"right":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->
-    <div class="wp-block-columns alignwide" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
-        <!-- wp:column {"width":"70%"} -->
-        <div class="wp-block-column" style="flex-basis:70%">
-            <!-- wp:group {"layout":{"type":"constrained"}} -->
-            <div class="wp-block-group">
-                <!-- wp:post-featured-image {"style":{"spacing":{"padding":{"bottom":"2vh"}}}} /-->
+<!-- wp:group {"tagName":"main","className":"editorial-single-wrapper","layout":{"type":"constrained"}} -->
+<main class="wp-block-group editorial-single-wrapper">
+	<div class="editorial-single-container">
+		<!-- BREADCRUMB -->
+		<nav class="editorial-single-breadcrumb">
+			<a href="http://localhost/literasi/">Beranda</a> &rsaquo; 
+			<a href="http://localhost/literasi/?page_id=86">Artikel Kajian</a> &rsaquo; 
+			<span>Kajian Etika</span>
+		</nav>
 
-                <!-- wp:post-title {"level":1,"fontSize":"x-large"} /-->
+		<!-- ARTICLE HEADER -->
+		<header class="editorial-single-header">
+			<!-- wp:post-title {"level":1,"className":"editorial-single-title"} /-->
+			
+			<div class="editorial-single-meta">
+				<img src="http://localhost/literasi/wp-content/uploads/2026/11/Nabil.jpeg" alt="Muhammad Nabil Al Ma'ruf" class="editorial-single-author-avatar" />
+				<div class="editorial-single-meta-details">
+					<div class="editorial-single-author-name">Muhammad Nabil Al Ma'ruf</div>
+					<div class="editorial-single-date-read">
+						<span>Mahasiswa Sistem Informasi UINSA Surabaya</span> &bull; 
+						<span>Kajian Literasi Digital</span>
+					</div>
+				</div>
+			</div>
+		</header>
 
-                <!-- wp:template-part {"slug":"post-meta"} /-->
+		<!-- ARTICLE BODY (Contains high-res image and original Unsplash attribution caption) -->
+		<div class="editorial-single-content">
+			<!-- wp:post-content {"lock":{"move":false,"remove":true}} /-->
+		</div>
 
-                <!-- wp:spacer {"height":"var:preset|spacing|10"} -->
-                <div style="height:var(--wp--preset--spacing--10)" aria-hidden="true" class="wp-block-spacer"></div>
-                <!-- /wp:spacer -->
+		<!-- ACADEMIC INTEGRITY & COPYRIGHT CALLOUT BOX -->
+		<div class="editorial-copyright-callout">
+			<div class="editorial-copyright-icon">📜</div>
+			<div class="editorial-copyright-text">
+				<strong>Integritas Akademik &amp; Hak Cipta Gambar:</strong> Seluruh ilustrasi dan materi visual pada artikel ini digunakan secara sah untuk tujuan pendidikan dan literasi digital, dengan lisensi bebas atribusi dari <em>Unsplash</em> sesuai keterangan pada masing-masing gambar.
+			</div>
+		</div>
 
-            </div>
-            <!-- /wp:group -->
+		<!-- AUTHOR BIO BOX -->
+		<div class="editorial-single-author-box">
+			<img src="http://localhost/literasi/wp-content/uploads/2026/11/Nabil.jpeg" alt="Muhammad Nabil Al Ma'ruf" class="editorial-single-author-card-avatar" />
+			<div class="editorial-single-author-card-bio">
+				<h4 class="editorial-single-author-card-name">Tentang Penulis: Muhammad Nabil Al Ma'ruf</h4>
+				<p>
+					Mahasiswa Program Studi Sistem Informasi di Fakultas Sains dan Teknologi, Universitas Islam Negeri Sunan Ampel (UINSA) Surabaya. Menaruh minat mendalam pada pengembangan sistem perangkat lunak, tata kelola data digital, serta advokasi etika bermedia sosial di kalangan generasi muda Indonesia.
+				</p>
+			</div>
+		</div>
 
-            <!-- wp:group {"layout":{"type":"constrained"}} -->
-            <div class="wp-block-group">
-                <!-- wp:post-content {"lock":{"move":false,"remove":true},"layout":{"type":"constrained"}} /-->
-
-                <!-- wp:post-terms {"term":"post_tag","separator":"  "} /-->
-            </div>
-            <!-- /wp:group -->
-
-            <!-- wp:group {"layout":{"type":"constrained"}} -->
-            <div class="wp-block-group">
-                <!-- wp:spacer {"height":"4rem"} -->
-                <div style="height:4rem" aria-hidden="true" class="wp-block-spacer"></div>
-                <!-- /wp:spacer -->
-
-                <!-- wp:pattern {"slug":"twentytwentyfour/hidden-comments"} /-->
-
-                <!-- wp:spacer {"height":"4rem"} -->
-                <div style="height:4rem" aria-hidden="true" class="wp-block-spacer"></div>
-                <!-- /wp:spacer -->
-
-                <!-- wp:pattern {"slug":"twentytwentyfour/hidden-post-navigation"} /-->
-
-            </div>
-            <!-- /wp:group -->
-        </div>
-        <!-- /wp:column -->
-
-        <!-- wp:column {"width":"30%"} -->
-        <div class="wp-block-column" style="flex-basis:30%">
-            <!-- wp:template-part {"slug":"sidebar","tagName":"aside"} /-->
-        </div>
-        <!-- /wp:column -->
-    </div>
-    <!-- /wp:columns -->
+		<!-- POST NAVIGATION -->
+		<div class="editorial-single-nav">
+			<a href="http://localhost/literasi/?page_id=86" class="editorial-pill-btn">&larr; Kembali ke Katalog Artikel</a>
+			<a href="http://localhost/literasi/?page_id=120" class="editorial-pill-btn">Beri Tanggapan &rarr;</a>
+		</div>
+	</div>
 </main>
 <!-- /wp:group -->
 
